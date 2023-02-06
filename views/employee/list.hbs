@@ -1,0 +1,26 @@
+<h3>Registered Members</h3>
+<table>
+    <thead class="tableHead">
+        <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>City</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.fullname}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.mobile}}</td>
+            <td>{{this.city}}</td>
+            <td>
+                <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
+                <a href="#"><span class="glyphicon glyphicon-trash"></span></a>  
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

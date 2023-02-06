@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel = "stylesheet" href="../public/css/employeestyle.css">
+    <script type="text/javascript" src="../public/javascript/script.js"></script>
+</head>
+<body>
+    <form autocomplete="off" name="form" onsubmit="return validateForm()">
+        <div class="formClass">
+            <div class="fullname">
+                <label>Full Name</label><br>
+                <input type="text" placeholder="Your full name..." name="fullname" required oninvalid="this.setCustomValidity('Please Enter Your Full Name Here')"
+                oninput="this.setCustomValidity('')">
+            </div>
+            <div class ="email">
+                <label>Email</label><br>
+                <input type="text" placeholder="email" name="email">
+            </div>
+            <div class="mobile">
+                <label>Mobile</label><br>
+                <input type="text" placeholder="mobile" name="mobile">
+                <button type="submit">Submit</button>
+            </div>
+            <div class="city">
+                <label>City</label><br>
+                <input type="text" placeholder="city" name="city">
+            </div>
+        </div>
+    </form>
+    <br>
+   <table>
+        <thead class="tableHead">
+            <tr>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>City</th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Okafor Andrew</td>
+                <td> aokafo3@lsu.edu</td>
+                <td>2254491330</td>
+                <td>Baton Rouge</td>
+            </tr>
+            <tr>
+                <td>Okafor Andrew</td>
+                <td> aokafo3@lsu.edu</td>
+                <td>2254491330</td>
+                <td>Baton Rouge</td>
+                <td>
+                    <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
+                    <a href="#"><span class="glyphicon glyphicon-trash"></span></a>  
+                </td>
+            </tr>
+        </tbody>
+   </table>
+</body>
+</html>

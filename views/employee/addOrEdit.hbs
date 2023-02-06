@@ -1,0 +1,26 @@
+<h3>{{viewTitle}}</h3>
+ <form autocomplete="off" name="form" onsubmit="return validateForm()"  action="/" method="post">
+        <div class="formClass">
+            <div class="fullname">
+                <label>Full Name</label><br>
+                <input type="text" placeholder="Your full name..." required name="fullname"
+                oninvalid="this.setCustomValidity('Please Enter Your Full Name Here')"
+                oninput="this.setCustomValidity('')">
+            </div>
+            <div class ="email">
+                <label>Email</label><br>
+                <input type="text" placeholder="email" name="email">
+            </div>
+            <div class="mobile">
+                <label>Mobile</label><br>
+                <input type="text" placeholder="mobile" name="mobile">
+                <button type="submit">Submit</button>
+            </div>
+            <div class="city">
+                <label>City</label><br>
+                <input type="text" placeholder="city" name="city">
+            </div>
+        </div>
+    </form>
+</body>
+</html>
