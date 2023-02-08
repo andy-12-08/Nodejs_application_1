@@ -1,4 +1,15 @@
-<h3>Registered Members</h3>
+<div class="create">
+    <ul>
+    <li> <a href="/" style="text-decoration: none;">
+            <button class="member_button">
+                <span class="glyphicon glyphicon-plus" style="color: white;"></span> Create New
+            </button>
+        </a>
+    </li>
+    <li><h3>Registered Members</h3></li>   
+    </ul>
+</div>
+
 <table>
     <thead class="tableHead">
         <tr>
@@ -17,7 +28,7 @@
             <td>{{this.mobile}}</td>
             <td>{{this.city}}</td>
             <td>
-                <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
+                <a href= "/{{this._id}}"><span class="glyphicon glyphicon-pencil"></span></a>
                 <a href="#"><span class="glyphicon glyphicon-trash"></span></a>  
             </td>
         </tr>

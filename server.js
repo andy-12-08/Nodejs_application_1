@@ -3,7 +3,7 @@ require('./models/db');
 const express = require('express');
 const exphbs = require('express-handlebars');
 const Handlebars = require('handlebars');
-const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access');
+const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access');
 const path = require('path');
 
 //a path to static files
@@ -17,7 +17,6 @@ const bodyparser = require('body-parser');
 var app = express();
 
 //set view engine
-
 app.set('views', path.join(__dirname, '/views/'));
 app.engine('hbs', exphbs.engine({ extname: 'hbs', defaultLayout: 'mainLayout', handlebars: allowInsecurePrototypeAccess(Handlebars), layoutsDir: __dirname + '/views/layouts/'}));
 app.set('view engine', 'hbs');
@@ -38,8 +37,8 @@ app.use(bodyparser.json());
 
 
 
-app.listen(8080, () => {
-    console.log('Express server started at port: 3000')
+app.listen(8080,() => {
+    console.log('Express server started at port: 8080')
 });
 
 

@@ -9,10 +9,29 @@ router.get('/', (req,res) => {
     res.render('employee/addOrEdit', {viewTitle:'Registration Form'});
 });
 
+
+router.get('/thankyou', (req,res) => {
+    res.render('employee/thankyou');
+    Employee.find().sort({_id:-1}).limit(1).then((docs)=> {
+        console.log(docs);
+    });
+
+});
+
+router.get('/list', (req,res) => {
+    Employee.deleteMany({"fullname": null}).then(() => {
+        //console.log("deleted empty record");
+        Employee.find().then((docs) => {
+            //console.log(docs);
+            res.render("employee/list", {list: docs});
+            });
+    });
+});
+
+
 router.post("/", (req, res) => {
     insertRecord(req,res);
 });
-
 
 //A function that will insert and save the record in the database
 function insertRecord(req,res){
@@ -21,29 +40,19 @@ function insertRecord(req,res){
     employee.email = req.body.email;
     employee.mobile = req.body.mobile;
     employee.city = req.body.city;
-    employee.save()
-        .then((doc) => {
-            res.redirect('/thankyou');
-            //console.log(doc)
-        }); 
+    employee.save((err, doc)=>{
+        if (!err)
+            res.redirect('/list');
+        else {
+            console.log(err);
+        };
+    });
 };
 
-router.get('/thankyou', (req,res) =>{
-    Employee.find().sort({_id:-1}).limit(1).then((docs)=> {
-    res.render('employee/thankyou');
-    console.log(docs);
-    console.log(docs.fullname);
-    });
-    
-});
-
-
-router.get('/list', (req,res) => {
-    Employee.find().then((docs)=> {
-    //console.log(docs)
-    res.render("employee/list", {list: docs});
+router.get('/:id', (req,res) =>{
+    Employee.findById(req.params.id).then(re =>{
+        res.render("employee/addOrEdit",{viewTitle:"Update", employee:re});
     });
 });
-
 
 module.exports = router;

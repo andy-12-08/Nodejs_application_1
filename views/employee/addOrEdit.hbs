@@ -1,26 +1,28 @@
 <h3>{{viewTitle}}</h3>
  <form autocomplete="off" name="form" onsubmit="return validateForm()"  action="/" method="post">
+      <input  name="_id" value="{{employee._id}}" type="hidden">
         <div class="formClass">
             <div class="fullname">
                 <label>Full Name</label><br>
                 <input type="text" placeholder="Your full name..." required name="fullname"
                 oninvalid="this.setCustomValidity('Please Enter Your Full Name Here')"
-                oninput="this.setCustomValidity('')">
+                oninput="this.setCustomValidity('')" value="{{employee.fullname}}">
             </div>
             <div class ="email">
                 <label>Email</label><br>
-                <input type="text" placeholder="email" name="email">
+                <input type="text" placeholder="email" name="email" value="{{employee.email}}">
             </div>
             <div class="mobile">
                 <label>Mobile</label><br>
-                <input type="text" placeholder="mobile" name="mobile">
+                <input type="text" placeholder="mobile" name="mobile" value="{{employee.mobile}}">
                 <button type="submit">Submit</button>
             </div>
             <div class="city">
                 <label>City</label><br>
-                <input type="text" placeholder="city" name="city">
+                <input type="text" placeholder="city" name="city" value="{{employee.city}}">
             </div>
         </div>
     </form>
+    <div class="viewAll" > <a href="/list" style="text-decoration: none;"><button>View All</button></a></div>
 </body>
 </html>
