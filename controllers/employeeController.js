@@ -50,8 +50,8 @@ function insertRecord(req,res){
 };
 
 router.get('/:id', (req,res) =>{
-    Employee.findById(req.params.id).then(re =>{
-        res.render("employee/addOrEdit",{viewTitle:"Update", employee:re});
+    Employee.findById(req.params.id).then(docs =>{
+        res.render("employee/addOrEdit",{viewTitle:"Update", employee:docs});
     });
 });
 

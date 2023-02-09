@@ -4,7 +4,7 @@
   "description": "This simple application will implement CRUD methods using RESTful API ",
   "main": "server.js",
   "scripts": {
-    "start":"node server.js"
+    "start": "node server.js"
   },
   "author": "Andrew Okafor",
   "license": "ISC",
@@ -14,6 +14,9 @@
     "express": "^4.18.2",
     "express-handlebars": "^6.0.7",
     "handlebars": "^4.7.7",
-    "mongoose": "^6.9.0"
+    "mongoose": "^6.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
   }
 }
