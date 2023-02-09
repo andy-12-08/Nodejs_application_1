@@ -13,7 +13,7 @@ router.get('/', (req,res) => {
 router.get('/thankyou', (req,res) => {
     res.render('employee/thankyou');
     Employee.find().sort({_id:-1}).limit(1).then((docs)=> {
-        console.log(docs);
+        //console.log(docs);
     });
 
 });
@@ -50,7 +50,7 @@ function insertRecord(req,res){
 };
 
 router.get('/:id', (req,res) =>{
-    Employee.findById(req.params.id).then(docs =>{
+    Employee.findOne(req.params._id).then(docs =>{
         res.render("employee/addOrEdit",{viewTitle:"Update", employee:docs});
     });
 });
