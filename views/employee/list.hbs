@@ -29,7 +29,7 @@
             <td>{{this.city}}</td>
             <td>
                 <a href= "/{{this._id}}"><span class="glyphicon glyphicon-pencil"></span></a>
-                <a href="#"><span class="glyphicon glyphicon-trash"></span></a>  
+                <a href= "/delete/{{this._id}}" onclick="return confirm('Are you sure you want to delete ?')"><span class="glyphicon glyphicon-trash"></span></a>  
             </td>
         </tr>
         {{/each}}
