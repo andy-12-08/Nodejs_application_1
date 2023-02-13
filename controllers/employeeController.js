@@ -13,7 +13,7 @@ router.get('/', (req,res) => {
 router.get('/thankyou', (req,res) => {
     res.render('employee/thankyou');
     Employee.find().sort({_id:-1}).limit(1).then((docs)=> {
-        //console.log(docs);
+        
     });
 
 });
