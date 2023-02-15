@@ -58,8 +58,8 @@ function updateRecord(req,res){
 };
 
 
-router.get('/:id', (req,res) =>{
-    Employee.findById(req.params.id).then(docs =>{
+router.get('/:_id', (req,res) =>{
+    Employee.findById(req.params._id).then(docs =>{
         res.render("employee/addOrEdit",{viewTitle:"Update", employee:docs});
     });
 });
